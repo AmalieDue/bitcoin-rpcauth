@@ -1,10 +1,28 @@
 {
-  "devDependencies": {
-    "standard": "^14.3.1"
+  "name": "bitcoin-rpcauth",
+  "version": "0.0.0",
+  "description": "Node implementation of [RPCAuth](https://github.com/bitcoin/bitcoin/tree/master/share/rpcauth)",
+  "main": "rpcauth.js",
+  "bin": {
+    "rpcauth": "./bin/rpcauth"
   },
   "dependencies": {
-    "getpass": "^0.1.7",
     "minimist": "^1.2.0",
-    "read": "^1.0.7"
-  }
+    "read": "^1.0.7",
+    "standard": "^14.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmalieDue/bitcoin-rpcauth.git"
+  },
+  "author": "Amalie Due Jensen <amaliedue@hyperdivision.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmalieDue/bitcoin-rpcauth/issues"
+  },
+  "homepage": "https://github.com/AmalieDue/bitcoin-rpcauth#readme"
 }
