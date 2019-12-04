@@ -17,11 +17,14 @@ var args = minimist(process.argv.slice(2), {
 
 const usage = `
   Usage:
+    rpcauth --username = USERNAME --password = PASSWORD 
 
-  Options:
-    --help, -h         Display this message
+  Positional arguments:
     --username         The username for authentication
     --password         Leave empty to generate a random password or specify "-" to prompt for password
+
+  Optional arguments:
+    --help, -h         Display this message
 `
 
 if (args.help) {
