@@ -1,0 +1,57 @@
+#!/usr/bin/env node
+
+const minimist = require('minimist')
+const rpcauth = require('../rpcauth')
+const read = require('read')
+
+// import arguments from command line
+var args = minimist(process.argv.slice(2), {
+  string: ['username', 'password'],
+  boolean: ['help'],
+  alias: { h: 'help' },
+  unknown: function () {
+    console.log('unrecognized command.')
+    process.exit(1)
+  }
+})
+
+const usage = `
+  Usage:
+
+  Options:
+  --username           the username for authentication
+  --password           leave empty to generate a random password or specify "-" to prompt for password
+`
+
+if (args.help) {
+  console.log(usage)
+  process.exit()
+}
+
+if (!args.username) {
+  console.log('Undefined username')
+  process.exit()
+}
+
+if (!args.password) {
+  gotPassword(null, rpcauth.generatePassword())
+} else if (args.password === '-') {
+  args.password = read({
+    prompt: 'Password: ',
+    silent: true
+  }, gotPassword)
+} else {
+  gotPassword(null, args.password)
+}
+
+function gotPassword (err, password) {
+  if (err) throw err
+
+  // Create 16 byte hex salt
+  const salt = rpcauth.generateSalt(16)
+  const hmac = rpcauth.passwordToHmac(salt, password)
+
+  console.log('String to be appended to bitcoin.conf:')
+  console.log('rpcauth=%s:%s$%s', args.username, salt, hmac)
+  console.log('Your password:\n%s', password)
+}
