@@ -1,6 +1,6 @@
 {
   "name": "bitcoin-rpcauth",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Node implementation of [RPCAuth](https://github.com/bitcoin/bitcoin/tree/master/share/rpcauth)",
   "main": "rpcauth.js",
   "bin": {
