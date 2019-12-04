@@ -4,14 +4,11 @@
 
 All functions are defined in `rpcauth.js`.
 
-# Usage
-
-### Full usage information
-
+## Usage
 
 ```
 Usage:
-  rpcauth --username = USERNAME --password = PASSWORD 
+  rpcauth --username=USERNAME --password=PASSWORD 
 
 Positional arguments:
   --username         The username for authentication
@@ -21,14 +18,13 @@ Optional arguments:
   --help, -h         Display this message
 ```
 
+## Install
 
-Use "rpcauth <command> --help" for more information.
+```sh
+npm install bitcoin-rpcauth
+```
 
-# Install
+## License
 
-`npm install bitcoin-rpcauth`
-
-# License
-
-ISC
+[ISC](LICENSE)
 

@@ -17,7 +17,7 @@ var args = minimist(process.argv.slice(2), {
 
 const usage = `
   Usage:
-    rpcauth --username = USERNAME --password = PASSWORD 
+    rpcauth --username=USERNAME --password=PASSWORD 
 
   Positional arguments:
     --username         The username for authentication
