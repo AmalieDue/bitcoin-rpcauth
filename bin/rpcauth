@@ -19,8 +19,9 @@ const usage = `
   Usage:
 
   Options:
-  --username           the username for authentication
-  --password           leave empty to generate a random password or specify "-" to prompt for password
+    --help, -h         Display this message
+    --username         The username for authentication
+    --password         Leave empty to generate a random password or specify "-" to prompt for password
 `
 
 if (args.help) {
